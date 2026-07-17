@@ -150,6 +150,10 @@ def download_task(task_id: str, url: str, format_id: str):
         'max_sleep_interval': 8,
         'impersonate': ImpersonateTarget.from_str('chrome'),
         # 'proxy': 'http://username:password@your-proxy-host:port',
+
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'referer': 'https://www.youtube.com/',
+        'format': 'best',
     }
 
     # Configure options based on user selection (MP4 vs MP3)
