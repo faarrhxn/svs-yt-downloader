@@ -231,4 +231,4 @@ async def serve_file(task_id: str):
 # Root redirect to the static UI
 @app.get("/")
 async def root():
-return FileResponse("static/index.html")
+    return FileResponse("static/index.html")
