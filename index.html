@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVS Tech Team | YouTube Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="glass-overlay"></div>
+
+    <main class="app-container">
+        <!-- Hero Section -->
+        <header class="hero slide-down">
+            <img src="logo.png" alt="SVS Logo" class="logo" onerror="this.style.display='none'">
+            <h1 class="heading glow-text">SVS</h1>
+            <h2 class="subheading">Tech Team</h2>
+            <p class="desc">YouTube Video Downloader</p>
+        </header>
+
+        <!-- Input Section -->
+        <section class="input-section fade-in delay-1">
+            <div class="input-wrapper">
+                <input type="text" id="url-input" placeholder="Paste any YouTube video URL..." autocomplete="off">
+                <div class="focus-border"></div>
+            </div>
+            <button id="analyze-btn" class="neon-btn">
+                <span class="btn-text">Analyze Video</span>
+                <span class="loader hidden"></span>
+            </button>
+            <div id="error-msg" class="error-toast hidden"></div>
+        </section>
+
+        <!-- Metadata Section -->
+        <section id="metadata-section" class="metadata-card glass-card hidden slide-up">
+            <img id="meta-thumb" src="" alt="Thumbnail">
+            <div class="meta-details">
+                <h3 id="meta-title">Video Title</h3>
+                <div class="meta-stats">
+                    <span id="meta-channel">Channel</span> • 
+                    <span id="meta-duration">00:00</span> • 
+                    <span id="meta-views">0 views</span>
+                </div>
+                <div class="meta-sub">
+                    <span id="meta-date">Date</span> | Likes: <span id="meta-likes">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Options Section -->
+        <section id="formats-section" class="formats-container hidden fade-in">
+            <!-- MP4 Card -->
+            <div class="format-card glass-card">
+                <div class="card-header">
+                    <h3>MP4 Video</h3>
+                    <span class="badge">Dynamic Detection</span>
+                </div>
+                <div id="mp4-options" class="options-list">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+
+            <!-- MP3 Card -->
+            <div class="format-card glass-card">
+                <div class="card-header">
+                    <h3>MP3 Audio</h3>
+                    <span class="badge">High Fidelity</span>
+                </div>
+                <div id="mp3-options" class="options-list">
+                    <!-- Standard options injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section id="progress-section" class="progress-card glass-card hidden">
+            <div class="progress-header">
+                <h3 id="progress-status">Downloading...</h3>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div class="progress-track">
+                <div id="progress-bar" class="progress-fill"></div>
+            </div>
+            <button id="cancel-btn" class="outline-btn">Cancel</button>
+        </section>
+
+        <footer class="app-footer fade-in delay-1">
+            <p>Developed by SVS Tech Team</p>
+        </footer>
+        
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
