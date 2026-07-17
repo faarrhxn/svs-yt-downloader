@@ -6,7 +6,6 @@ from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel
-from yt_dlp.networking.impersonate import ImpersonateTarget
 import yt_dlp
 
 app = FastAPI(title="SVS Tech Team YouTube Downloader ")
@@ -77,8 +76,7 @@ async def get_video_info(req: URLRequest):
         'sleep_interval': 3,
         'max_sleep_interval': 8,
 
-        # 2. Browser Impersonation: Spoof Chrome fingerprints
-        'impersonate': ImpersonateTarget.from_str('chrome'),
+    
         
         # 3. Proxies (The Ultimate Fix)
         # yt-dlp natively supports HTTP, HTTPS, or SOCKS5 proxies. 
